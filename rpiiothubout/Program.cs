@@ -46,6 +46,9 @@ namespace rpitest
                     }
                 }
             }
+            catch(Exception ex) {
+                Console.WriteLine(ex);
+            }
             finally
             {
                 controller.ClosePin(pin);
@@ -59,7 +62,15 @@ namespace rpitest
 
             message.Properties.Add("buttonEvent", "true");
 
-            await deviceClient.SendEventAsync(message);
+            try
+            {
+                await deviceClient.SendEventAsync(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
             Console.WriteLine("Sending Message {0}", messageString);
 
         }
