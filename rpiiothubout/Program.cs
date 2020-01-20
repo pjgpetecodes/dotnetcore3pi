@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Device.Gpio;
 using Microsoft.Azure.Devices.Client;
+using System.Threading.Tasks;
 using System.Text;
 
 namespace rpitest
@@ -36,7 +37,7 @@ namespace rpitest
                         if (buttonPressed == false)
                         {
                             buttonPressed = true;
-                            SendDeviceToCloudMessageAsync();
+                            SendDeviceToCloudMessageAsync().Wait();
                         }
                     }
                     else
@@ -55,7 +56,7 @@ namespace rpitest
             }
         }
 
-        private static async void SendDeviceToCloudMessageAsync()
+        private static async Task SendDeviceToCloudMessageAsync()
         {
             var messageString = "Button Pressed";
             Message message = new Message(Encoding.ASCII.GetBytes(messageString));

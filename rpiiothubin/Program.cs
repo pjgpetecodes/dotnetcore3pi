@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Device.Gpio;
 using Microsoft.Azure.Devices.Client;
+using System.Threading.Tasks;
 using System.Text;
 
 namespace rpitest
@@ -17,8 +18,6 @@ namespace rpitest
 
             deviceClient = DeviceClient.CreateFromConnectionString(connectionString);
             
-            ReceiveCloudToDeviceMessageAsync();
-
             GpioController controller = new GpioController(PinNumberingScheme.Board);
             var pin = 10;
             var buttonPin = 26;
@@ -31,6 +30,9 @@ namespace rpitest
             {
                 while (true)
                 {
+
+                    ReceiveCloudToDeviceMessageAsync();
+
                     if (controller.Read(buttonPin) == false)
                     {
                         controller.Write(pin, PinValue.High);
@@ -38,7 +40,7 @@ namespace rpitest
                         if (buttonPressed == false)
                         {
                             buttonPressed = true;
-                            SendDeviceToCloudMessageAsync();
+                            SendDeviceToCloudMessageAsync().Wait();
                         }
                     }
                     else
@@ -54,7 +56,7 @@ namespace rpitest
             }
         }
 
-        private static async void SendDeviceToCloudMessageAsync()
+        private static async Task SendDeviceToCloudMessageAsync()
         {
             var messageString = "Button Pressed";
             Message message = new Message(Encoding.ASCII.GetBytes(messageString));
@@ -66,21 +68,15 @@ namespace rpitest
 
         }
 
-        private static async void ReceiveCloudToDeviceMessageAsync()
+        private static async Task ReceiveCloudToDeviceMessageAsync()
         {
-            Console.WriteLine("Receiving Cloud to Device messages from IoT Hub");
-
-            while (true)
+            Message receivedMessage = await deviceClient.ReceiveAsync();
+                
+            if (receivedMessage != null) 
             {
-                Message receivedMessage = await deviceClient.ReceiveAsync();
-                
-                if (receivedMessage != null) 
-                {
-                    string receivedMessageString = Encoding.ASCII.GetString(receivedMessage.GetBytes());
-                    Console.WriteLine("Received message: {0}", receivedMessageString);
-                    await deviceClient.CompleteAsync(receivedMessage);
-                }
-                
+                string receivedMessageString = Encoding.ASCII.GetString(receivedMessage.GetBytes());
+                Console.WriteLine("Received message: {0}", receivedMessageString);
+                await deviceClient.CompleteAsync(receivedMessage);
             }
         }
     }
