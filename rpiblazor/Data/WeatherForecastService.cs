@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dotnetoxford.Data
+namespace rpiblazor.Data
 {
     public class WeatherForecastService
     {

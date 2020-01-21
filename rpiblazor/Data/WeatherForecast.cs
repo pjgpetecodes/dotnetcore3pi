@@ -1,6 +1,6 @@
 using System;
 
-namespace dotnetoxford.Data
+namespace rpiblazor.Data
 {
     public class WeatherForecast
     {

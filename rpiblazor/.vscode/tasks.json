@@ -82,7 +82,7 @@
             "command": "bash",
                 "args": [
                     "-c",
-                    "'sshpass -p \"raspberry\" rsync -rvuz $(wslpath '\"'${workspaceFolder}'\"')/bin/linux-arm/publish/ pi@192.168.1.80:share/${workspaceFolderBasename}/'"
+                    "'sshpass -p \"raspberry\" rsync -rvuz $(wslpath '\"'${workspaceFolder}'\"')/bin/linux-arm/publish/ pi@192.168.43.47:share/${workspaceFolderBasename}/'"
                 ],
                 "problemMatcher": []
             
@@ -106,7 +106,7 @@
         {
             "label": "echo",
             "type": "shell",
-            "command": "echo 'sshpass -p \"raspberry\" rsync -rvuz $(wslpath '\"'${workspaceFolder}'\"')/bin/linux-arm/publish/ pi@192.168.1.80:share/${workspaceFolderBasename}/'"
+            "command": "echo 'sshpass -p \"raspberry\" rsync -rvuz $(wslpath '\"'${workspaceFolder}'\"')/bin/linux-arm/publish/ pi@192.168.43.47:share/${workspaceFolderBasename}/'"
         }
     ]
 }
