@@ -24,13 +24,19 @@ Pete Gallagher / Pete Codes / PJG Creations 2020
 
 # Dot Net Core 3 Installation on a Raspberry Pi
 
-Full instructions can be found at;
+You can install Dot Net Core 3 on the Raspberry Pi in one command by executing;
+
+```
+wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnetcore3pi/master/install.sh | sudo bash
+```
+
+Full broken down installation instructions can be found at;
 
 https://www.petecodes.co.uk/explorations-in-dot-net-core-3-0-for-raspberry-pi/
 
-# Install Script
+# Local Install Script
 
-You can now install Dot Net Core 3 by running the following in the root of the repo;
+If you've cloned this repo, you can install Dot Net Core 3 by running the following in the root of the repo;
 
 ```
 sudo chmod +x install.sh
