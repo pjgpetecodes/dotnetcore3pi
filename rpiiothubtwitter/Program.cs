@@ -11,7 +11,8 @@ namespace rpitest
 
         private static readonly string connectionString = "[Enter your IoT hub Device Primary Connection String]";
         private static DeviceClient deviceClient;
-
+        private static int messageCount = 0;
+            
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -30,6 +31,9 @@ namespace rpitest
             {
                 while (true)
                 {
+
+                    ReceiveCloudToDeviceMessageAsync();
+
                     if (controller.Read(buttonPin) == false)
                     {
                         controller.Write(pin, PinValue.High);
@@ -47,9 +51,6 @@ namespace rpitest
                     }
                 }
             }
-            catch(Exception ex) {
-                Console.WriteLine(ex);
-            }
             finally
             {
                 controller.ClosePin(pin);
@@ -58,22 +59,32 @@ namespace rpitest
 
         private static async Task SendDeviceToCloudMessageAsync()
         {
+            messageCount +=1;
+
             var messageString = "Button Pressed";
             Message message = new Message(Encoding.ASCII.GetBytes(messageString));
 
-            message.Properties.Add("buttonEvent", "true");
-
-            try
+            if (messageCount > 5)
             {
-                await deviceClient.SendEventAsync(message);
+                message.Properties.Add("sendTweet", "true");
+                Console.WriteLine("Message will trigger tweet!");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-
+            
+            await deviceClient.SendEventAsync(message);
             Console.WriteLine("Sending Message {0}", messageString);
+            
+        }
 
+        private static async Task ReceiveCloudToDeviceMessageAsync()
+        {
+            Message receivedMessage = await deviceClient.ReceiveAsync();
+                
+            if (receivedMessage != null) 
+            {
+                string receivedMessageString = Encoding.ASCII.GetString(receivedMessage.GetBytes());
+                Console.WriteLine("Received message: {0}", receivedMessageString);
+                await deviceClient.CompleteAsync(receivedMessage);
+            }
         }
     }
 }
