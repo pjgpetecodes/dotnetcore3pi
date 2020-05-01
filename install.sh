@@ -127,7 +127,7 @@ echo -e "\e[1m          Get Blazor Templates"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0-preview5.20216.8
+dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0-rc1.20223.4
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
