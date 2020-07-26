@@ -6,15 +6,15 @@ echo -e "\e[1m----------------------------------------"
 echo ""
 echo -e "\e[1mPete Codes / PJG Creations 2020"
 echo ""
-echo -e "Latest update 02/06/2020"
+echo -e "Latest update 26/07/2020"
 echo ""
 echo "This will install the following;"
 echo ""
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
-echo "- Dot Net Core 3.1.3"
-echo "- ASP.NET Core 3.1.4"
-echo "- Blazor WASM 3.2.0"
+echo "- Dot Net Core 3.1.302"
+echo "- ASP.NET Core 3.1.6"
+echo "- Blazor WASM 3.2.1 (Included automatically)"
 echo ""
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
@@ -60,7 +60,7 @@ echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
 cd ~/
-wget https://download.visualstudio.microsoft.com/download/pr/f2e1cb4a-0c70-49b6-871c-ebdea5ebf09d/acb1ea0c0dbaface9e19796083fe1a6b/dotnet-sdk-3.1.300-linux-arm.tar.gz
+wget https://download.visualstudio.microsoft.com/download/pr/56691c4c-341a-4bca-9869-409803d23cf8/d872d7a0c27a6c5e9b812e889de89956/dotnet-sdk-3.1.302-linux-arm.tar.gz
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -68,7 +68,7 @@ echo -e "\e[1m       Getting ASP.NET Core Runtime"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-wget https://download.visualstudio.microsoft.com/download/pr/06f9feeb-cd19-49e9-a5cd-a230e1d8c52f/a232fbb4a6e6a90bbe624225e180308a/aspnetcore-runtime-3.1.4-linux-arm.tar.gz
+wget https://download.visualstudio.microsoft.com/download/pr/92e90ed5-dba3-427b-a876-8b46fe5e16b6/69cae4fe4a0ec6bc7585de6fa889fd66/aspnetcore-runtime-3.1.6-linux-arm.tar.gz
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -90,7 +90,7 @@ echo -e "\e[1m    Extracting Dot NET Core Binaries"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-tar -xvf dotnet-sdk-3.1.300-linux-arm.tar.gz -C /opt/dotnet/
+tar -xvf dotnet-sdk-3.1.302-linux-arm.tar.gz -C /opt/dotnet/
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -98,7 +98,7 @@ echo -e "\e[1m    Extracting ASP.NET Runtime"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-tar -xvf aspnetcore-runtime-3.1.4-linux-arm.tar.gz -C /opt/dotnet/
+tar -xvf aspnetcore-runtime-3.1.6-linux-arm.tar.gz -C /opt/dotnet/
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -123,11 +123,11 @@ fi
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
-echo -e "\e[1m          Get Blazor Templates"
+echo -e "\e[1m   Blazor Templates are now included!"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.0
+#dotnet new -i Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.1
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
