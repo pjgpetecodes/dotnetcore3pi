@@ -12,8 +12,8 @@ echo "This will install the following;"
 echo ""
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
-echo "- Dot Net Core 3.1.402"
-echo "- ASP.NET Core 3.1.8"
+echo "- Dot Net Core 3.1.404"
+echo "- ASP.NET Core 3.1.10"
 echo "- Blazor WASM 3.2.1 (Included automatically)"
 echo ""
 echo -e "\e[1m----------------------------------------"
@@ -45,7 +45,7 @@ echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
 cd ~/
-wget https://download.visualstudio.microsoft.com/download/pr/8f0dffe3-18f0-4d32-beb0-dbcb9a0d91a1/abe9a34e3f8916478f0bd80402b01b38/dotnet-sdk-3.1.402-linux-arm.tar.gz
+wget https://download.visualstudio.microsoft.com/download/pr/2ebe1f4b-4423-4694-8f5b-57f22a315d66/4bceeffda88fc6f19fad7dfb2cd30487/dotnet-sdk-3.1.404-linux-arm.tar.gz
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -53,7 +53,7 @@ echo -e "\e[1m       Getting ASP.NET Core Runtime"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-wget https://download.visualstudio.microsoft.com/download/pr/390b186e-eefc-4dab-a5bb-1c549970771b/6dacdae3ab014ed7e2d7f10e233211db/aspnetcore-runtime-3.1.8-linux-arm.tar.gz
+wget https://download.visualstudio.microsoft.com/download/pr/a2223d1f-c138-4586-8cd1-274c5387e975/623ece755546aca8f4be268f525683c5/aspnetcore-runtime-3.1.10-linux-arm.tar.gz
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -75,7 +75,7 @@ echo -e "\e[1m    Extracting Dot NET Core Binaries"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-tar -xvf dotnet-sdk-3.1.402-linux-arm.tar.gz -C /opt/dotnet/
+tar -xvf dotnet-sdk-3.1.404-linux-arm.tar.gz -C /opt/dotnet/
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -83,7 +83,7 @@ echo -e "\e[1m    Extracting ASP.NET Runtime"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-tar -xvf aspnetcore-runtime-3.1.8-linux-arm.tar.gz -C /opt/dotnet/
+tar -xvf aspnetcore-runtime-3.1.10-linux-arm.tar.gz -C /opt/dotnet/
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
