@@ -6,14 +6,14 @@ echo -e "\e[1m----------------------------------------"
 echo ""
 echo -e "\e[1mPete Codes / PJG Creations 2020"
 echo ""
-echo -e "Latest update 19/04/2021"
+echo -e "Latest update 12/05/2021"
 echo ""
 echo "This will install the following;"
 echo ""
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
-echo "- Dot Net Core 3.1.408"
-echo "- ASP.NET Core 3.1.14"
+echo "- Dot Net Core 3.1.409"
+echo "- ASP.NET Core 3.1.15"
 echo ""
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
@@ -44,7 +44,7 @@ echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
 cd ~/
-wget https://download.visualstudio.microsoft.com/download/pr/614983bc-78eb-4673-b1ff-fe876660ae21/03523848937d401293a7abdb56a6a0e2/dotnet-sdk-3.1.408-linux-arm.tar.gz
+wget https://download.visualstudio.microsoft.com/download/pr/58d0ebb7-c06d-4d9a-a69f-22dac06fb278/0ae7881b7007c13a8e325d54a8f87657/dotnet-sdk-3.1.409-linux-arm.tar.gz
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -52,7 +52,7 @@ echo -e "\e[1m       Getting ASP.NET Core Runtime"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-wget https://download.visualstudio.microsoft.com/download/pr/a2439002-1f01-40d3-bc03-93612f2a25b5/2bd289060d44b428baa027ba0e8be762/aspnetcore-runtime-3.1.14-linux-arm.tar.gz
+wget https://download.visualstudio.microsoft.com/download/pr/000183b9-3d77-4e03-902e-7debe460497d/dcd6400fe1f28baba8624d3242f820a7/aspnetcore-runtime-3.1.15-linux-arm.tar.gz
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -74,7 +74,7 @@ echo -e "\e[1m    Extracting Dot NET Core Binaries"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-tar -xvf dotnet-sdk-3.1.408-linux-arm.tar.gz -C /opt/dotnet/
+tar -xvf dotnet-sdk-3.1.409-linux-arm.tar.gz -C /opt/dotnet/
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -82,7 +82,7 @@ echo -e "\e[1m    Extracting ASP.NET Runtime"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-tar -xvf aspnetcore-runtime-3.1.14-linux-arm.tar.gz -C /opt/dotnet/
+tar -xvf aspnetcore-runtime-3.1.15-linux-arm.tar.gz -C /opt/dotnet/
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"

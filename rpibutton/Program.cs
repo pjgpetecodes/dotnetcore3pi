@@ -7,7 +7,7 @@ namespace rpitest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello HackSoc!");
             
             GpioController controller = new GpioController(PinNumberingScheme.Board);
             var pin = 10;
