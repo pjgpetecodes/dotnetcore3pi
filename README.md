@@ -24,11 +24,16 @@ Pete Gallagher / Pete Codes / PJG Creations 2020
 
 # Dot Net Core 3 Installation on a Raspberry Pi
 
-You can install Dot Net Core 3 on the Raspberry Pi in one command by executing;
+You can install Dot Net Core 3 (LTS) on the Raspberry Pi in one command by executing:
+```
+bash <(wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnetcore3pi/master/install.sh)
+```
 
+Alternatively you can get the current version in one command by executing:
 ```
-wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnetcore3pi/master/install.sh | sudo bash
+bash <(wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnetcore3pi/master/install.sh) current
 ```
+
 
 Full broken down installation instructions can be found at;
 
@@ -36,12 +41,16 @@ https://www.petecodes.co.uk/explorations-in-dot-net-core-3-0-for-raspberry-pi/
 
 # Local Install Script
 
-If you've cloned this repo, you can install Dot Net Core 3 by running the following in the root of the repo;
+If you've cloned this repo, you can install Dot Net Core 3 (LTS) by running the following in the root of the repo:
 
 ```
-sudo chmod +x install.sh
-sudo ./install.sh 
+chmod u+x install.sh
+./install.sh
+```
 
+or current with
+```
+./install.sh current
 ```
 
 # IoT Hub Connection
