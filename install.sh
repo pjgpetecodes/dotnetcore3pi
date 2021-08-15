@@ -55,7 +55,7 @@ else
 fi
 
 install_version=""
-case $arg2 in
+case $2 in
     current)
         install_version="-c Current"
 	;;
