@@ -86,6 +86,12 @@ echo -e "\n"
 ./dotnet-install.sh $install_version --runtime aspnetcore
 
 
+echo -e "Creating local bin directory for user"
+mkdir -p ~/.local/bin
+
+echo -e "Linking dotnet to local bin directory"
+ln -s ~/.dotnet/dotnet ~/.local/bin/dotnet
+
 if grep -q 'export DOTNET_ROOT=' ~/.bashrc;  then
   echo 'Already added link to .bashrc'
 else
