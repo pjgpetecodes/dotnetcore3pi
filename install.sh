@@ -64,10 +64,12 @@ case $arg2 in
 	;;
 esac
 
-echo "Getting MS dotnet install script"
-cd ~/
-wget https://dot.net/v1/dotnet-install.sh
-chmod u+x dotnet-install.sh
+if ! [[ -d dotnet-install.sh ]]; then
+	echo "Getting MS dotnet install script"
+	cd ~/
+	wget https://dot.net/v1/dotnet-install.sh
+	chmod u+x dotnet-install.sh
+fi
 
 echo -e "\n"
 echo -e "\n----------------------------------------"
@@ -86,11 +88,15 @@ echo -e "\n"
 ./dotnet-install.sh $install_version --runtime aspnetcore
 
 
-echo -e "Creating local bin directory for user"
-mkdir -p ~/.local/bin
+if ! [[ -d ~/.local/bin ]]; then
+	echo -e "Creating local bin directory for user"
+	mkdir -p ~/.local/bin
+fi
 
-echo -e "Linking dotnet to local bin directory"
-ln -s ~/.dotnet/dotnet ~/.local/bin/dotnet
+if ! [[ -L ~/.local/bin/dotnet ]]; then
+	echo -e "Linking dotnet to local bin directory"
+	ln -s ~/.dotnet/dotnet ~/.local/bin/dotnet
+fi
 
 if grep -q 'export DOTNET_ROOT=' ~/.bashrc;  then
   echo 'Already added link to .bashrc'
