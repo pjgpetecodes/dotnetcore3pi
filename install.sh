@@ -55,7 +55,7 @@ else
 fi
 
 install_version=""
-case $2 in
+case $1 in
     current)
         install_version="-c Current"
 	;;
