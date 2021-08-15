@@ -113,7 +113,7 @@ echo -e "\n          Run dotnet --info"
 echo -e "\n----------------------------------------"
 echo -e "\n"
 
-source ~/.bashrc
+source ~/.profile
 dotnet --info
 
 echo -e "\n"
