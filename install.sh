@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 echo -e "\n----------------------------------------"
 echo -e "\n       Dot Net Core Installer"
 echo -e "\n----------------------------------------"
@@ -55,7 +57,7 @@ else
 fi
 
 install_version=""
-case $1 in
+case ${1-""} in
     current)
         install_version="-c Current"
 	;;
@@ -64,7 +66,7 @@ case $1 in
 	;;
 esac
 
-if ! [[ -d dotnet-install.sh ]]; then
+if ! [[ -f dotnet-install.sh ]]; then
 	echo "Getting MS dotnet install script"
 	cd ~/
 	wget https://dot.net/v1/dotnet-install.sh
