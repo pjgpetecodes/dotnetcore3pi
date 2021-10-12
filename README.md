@@ -83,3 +83,20 @@ You may also need to install curl and zip if they're not already installed;
 ```
 sudo apt-get install curl
 ```
+
+# Ensuring that projects use .NET Core and minor versions
+
+Now that we have .NET 5 and 6, if you have that installed, new projects will default to that automatically.
+
+To ensure that you create a .NET Core project (assuming you want to!), create a global.json file with the following contents in the directory you want to create your project;
+
+```
+{
+  "sdk": {
+    "version": "3.1.409",
+    "rollForward": "latestMinor"
+  }
+}
+```
+
+It's also best to install the latest 
